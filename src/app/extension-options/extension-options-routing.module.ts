@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExtensionOptionsComponent } from '.';
+import { ExtensionOptionsComponent } from './components/extension-options/extension-options.component';
 
 const routes: Routes = [
   { path: '', component: ExtensionOptionsComponent }

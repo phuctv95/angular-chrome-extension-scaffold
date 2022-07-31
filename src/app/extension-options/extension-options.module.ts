@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExtensionOptionsComponent, ExtensionOptionsRoutingModule } from '.';
+import { ExtensionOptionsComponent } from './components/extension-options/extension-options.component';
+import { ExtensionOptionsRoutingModule } from './extension-options-routing.module';
 
 
 

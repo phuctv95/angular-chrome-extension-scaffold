@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ExtensionPage } from 'src/shared';
+import { ExtensionPage } from 'src/shared/enums/extension-page';
 
 @Component({
   selector: 'app-root',
