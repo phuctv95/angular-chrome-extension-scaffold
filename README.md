@@ -1,27 +1,27 @@
-# AngularChromeExtensionScaffold
+# Chrome Extension Scaffold using Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+This is a scaffold for Chrome Extension development using Angular framework.
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Install `pnpm` if not yet. Run `pnpm install`.
+2. For development, run `pnpm run watch-angular` and `pnpm run watch-chrome-extension-webpack`.
+3. The built files are in the `dist/angular-chrome-extension-scaffold` folder.
 
-## Code scaffolding
+To build for production, run `pnpm run build-prod`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Code Structure
 
-## Build
+There are basically 2 builds:
+1. One is for building **Manifest file**, **Background script**, **Content scripts** (they are in `src/chrome-extension` folder, the folder also contains some Popup and Options files, but are just for redirecting to Angular built `index.html`);
+2. The second one is for building **Popup page** and **Options page** (Angular code).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Folders you should care for development:
+- `src/chrome-extension` folder:
+  + `manifest.json`: the _Manifest file_.
+  + `background.ts`: the _Background script_.
+  + `content-script.ts/.css`: the _Content scripts_.
+  + In `.ts` files, you can only `import` order things (interfaces, enums, etc.) from this folder or in `app/shared`. To be able to import from more, edit in the `[ts-loader include section]` in `chrome-extension-webpack.config.js`.
+- `app/extension-popup` folder: the _Popup page_.
+- `app/extension-options` folder: the _Options page_.
+- `app/shared` folder: contains common code shared between 2 mentions builds above.

@@ -1,0 +1,21 @@
+{
+    "name": "Angular Chrome Extension Scaffold",
+    "description": "Chrome Extension Scaffold using Angular",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["storage"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://developer.chrome.com/*"],
+            "css": ["content-script.css"],
+            "js": ["content-script.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html"
+}
