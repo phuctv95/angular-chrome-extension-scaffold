@@ -4,9 +4,11 @@ This is a scaffold for Chrome Extension development using Angular framework.
 
 ## Setup
 
-1. Install `pnpm` if not yet. Run `pnpm install`.
-2. For development, run `pnpm run watch-angular` and `pnpm run watch-chrome-extension-webpack`.
-3. The built files are in the `dist/angular-chrome-extension-scaffold` folder.
+1. Update name and description with your desire in `src/chrome-extension/manifest.json`.
+2. Search and replace all the text "angular-chrome-extension-scaffold" with your desired name.
+3. Install `pnpm` if not yet. Run `pnpm install`.
+4. For development, run `pnpm run watch-angular` and `pnpm run watch-chrome-extension-webpack`.
+5. The built files are in the `dist` folder.
 
 To build for production, run `pnpm run build-prod`.
 
